@@ -1,5 +1,5 @@
 import style from "./JobPage.module.scss";
-import { Input, Button } from "@mantine/core";
+import { Input, Button, Pagination } from "@mantine/core";
 import { IconSearch } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
 
@@ -32,13 +32,15 @@ const JobPage = () => {
   ];
 
   return (
-    <div>
+    <>
       <Input
+        size="lg"
         placeholder="Введите название вакансии"
         icon={<IconSearch />}
+        rightSectionWidth={100}
         rightSection={
           <Button
-            className={style.btn}
+            className={style.searchBtn}
             size="xs"
             variant="gradient"
             gradient={{ from: "teal", to: "blue", deg: 60 }}
@@ -65,7 +67,13 @@ const JobPage = () => {
           </div>
         </Link>
       ))}
-    </div>
+
+      <Pagination
+        total={Math.ceil(card.length / 4)}
+        position="center"
+        style={{ marginTop: "40px" }}
+      />
+    </>
   );
 };
 
