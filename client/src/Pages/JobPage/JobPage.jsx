@@ -1,9 +1,14 @@
+import { useState } from "react";
 import style from "./JobPage.module.scss";
-import { Input, Button, Pagination } from "@mantine/core";
+import { Input, Button } from "@mantine/core";
 import { IconSearch } from "@tabler/icons-react";
-import { Link } from "react-router-dom";
+import JobCard from "../../components/JobCard/JobCard";
+import Paginations from "../../components/Pagination/Paginations";
 
 const JobPage = () => {
+  const cardsPerPage = 2;
+  const [currentPage, setCurrentPage] = useState(1);
+
   const card = [
     {
       header: "Менеджер-дизайнер",
@@ -31,6 +36,12 @@ const JobPage = () => {
     },
   ];
 
+  const lastIndex = cardsPerPage * currentPage;
+  const firstIndex = lastIndex - cardsPerPage;
+  const currentCards = card.slice(firstIndex, lastIndex);
+
+  const page = (pageNumber) => setCurrentPage(pageNumber);
+
   return (
     <>
       <Input
@@ -50,29 +61,9 @@ const JobPage = () => {
         }
       />
 
-      {card.map((el, index) => (
-        <Link to={`/vacancy/${el.header}`} key={index}>
-          <div className={style.cardWrapper}>
-            <h2>{el.header}</h2>
+      <JobCard card={currentCards} />
 
-            <div className={style.cardDescription}>
-              <p>{el.salary}</p>
-              <div>{el.time}</div>
-            </div>
-
-            <div className={style.cardLocation}>
-              <div className={style.geoIcon}></div>
-              <p>{el.city}</p>
-            </div>
-          </div>
-        </Link>
-      ))}
-
-      <Pagination
-        total={Math.ceil(card.length / 4)}
-        position="center"
-        style={{ marginTop: "40px" }}
-      />
+      <Paginations card={card} cardsPerPage={cardsPerPage} page={page} />
     </>
   );
 };
