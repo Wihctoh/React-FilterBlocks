@@ -1,0 +1,104 @@
+$header-color: #5e96fc;
+$salary-color: #232134;
+$background-color: #eaebed;
+$white-color: #fff;
+$dot-color: #7b7c88;
+
+.cardWrapper {
+  margin-top: 16px;
+  padding: 24px 0 24px 24px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+
+  border-radius: 12px;
+  border: 1px solid $background-color;
+  background: $white-color;
+
+  h2 {
+    color: $header-color;
+
+    font: 600 20px Inter;
+    line-height: normal;
+  }
+
+  .cardDescription {
+    display: flex;
+    gap: 12px;
+
+    p {
+      color: $salary-color;
+      font-feature-settings: "clig" off, "liga" off;
+      font: 600 16px Inter;
+      line-height: 20px; /* 125% */
+
+      &::after {
+        content: "•";
+        color: $dot-color;
+        padding-left: 12px;
+      }
+    }
+
+    div {
+      color: $salary-color;
+      font-feature-settings: "clig" off, "liga" off;
+      font: 400 16px Inter;
+      line-height: 20px; /* 125% */
+    }
+  }
+
+  .cardLocation {
+    display: flex;
+    gap: 8px;
+
+    .geoIcon {
+      background: url(./assets/geoIcon.svg) no-repeat;
+      width: 20px;
+      height: 20px;
+      background-size: contain;
+    }
+
+    p {
+      color: $salary-color;
+      font: 400 16px Inter;
+      line-height: normal;
+    }
+  }
+}
+
+// ---------------------cardRequirementsWrapper-------------
+
+.cardRequirementsWrapper {
+  margin-top: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #eaebed;
+
+  .responsibilities,
+  .requirements,
+  .conditions {
+    h2 {
+      color: #232134;
+      font-feature-settings: "clig" off, "liga" off;
+      font: 700 20px Inter;
+      line-height: 20px; /* 100% */
+    }
+
+    ul {
+      padding-left: 24px;
+      margin-top: 16px;
+
+      li {
+        color: #232134;
+        font: 400 16px Inter;
+        line-height: 140%; /* 22.4px */
+      }
+    }
+  }
+}

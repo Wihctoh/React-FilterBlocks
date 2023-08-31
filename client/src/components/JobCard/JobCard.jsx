@@ -5,7 +5,7 @@ const JobCard = ({ card }) => {
   return (
     <>
       {card.map((el, index) => (
-        <Link to={`/vacancy/${el.header}`} key={index}>
+        <Link to={`/vacancy/${el.id}`} key={index}>
           <div className={style.cardWrapper}>
             <h2>{el.header}</h2>
 

@@ -1,25 +1,14 @@
 import { Pagination } from "@mantine/core";
 
-const Paginations = ({ card, cardsPerPage, page }) => {
-  // const total = [];
-
-  // for (let i = 1; i <= Math.ceil(card.length / cardsPerPage); i++) {
-  //   total.push(i);
-  // }
-
+const Paginations = ({ card, size, setCurrentPage }) => {
   return (
     <>
       <Pagination
-        total={Math.ceil(card.length / cardsPerPage)}
+        total={Math.ceil(card.length / size)}
         position="center"
         style={{ marginTop: "40px" }}
-        onChange={() => page(cardsPerPage)}
+        onChange={(card) => setCurrentPage(card)}
       />
-      {/* {total.map((el, index) => (
-        <div className="wrapper" key={index} onClick={() => page(el)}>
-          <p>{el}</p>
-        </div>
-      ))} */}
     </>
   );
 };
