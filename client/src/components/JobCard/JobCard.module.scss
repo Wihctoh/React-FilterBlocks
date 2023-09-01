@@ -4,8 +4,16 @@ $background-color: #eaebed;
 $white-color: #fff;
 $dot-color: #7b7c88;
 
+.wrapper {
+  max-width: 773px;
+  margin: 16px auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
 .cardWrapper {
-  margin-top: 16px;
   padding: 24px 0 24px 24px;
 
   display: flex;

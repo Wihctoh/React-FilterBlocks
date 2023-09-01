@@ -1,3 +1,16 @@
 .searchBtn {
   padding: 0 20px;
 }
+
+.wrapper {
+  max-width: 773px;
+  margin: 1% auto;
+}
+
+.paginationWrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 17%;
+}

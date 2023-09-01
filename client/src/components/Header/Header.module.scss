@@ -1,0 +1,28 @@
+.headerWrapper {
+  padding: 15px;
+
+  display: flex;
+  align-items: center;
+  gap: 110px;
+
+  background-color: #fff;
+
+  .headerLogo {
+    background: url(./assets/headerLogo.png) no-repeat;
+    background-size: contain;
+    height: 30px;
+    width: 130px;
+  }
+
+  nav {
+    display: flex;
+    gap: 30px;
+
+    p {
+      color: #232134;
+      font: 400 16px Inter;
+      font-feature-settings: "clig" off, "liga" off;
+      line-height: 20px; /* 125% */
+    }
+  }
+}
