@@ -1,4 +1,6 @@
 import style from "./Header.module.scss";
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     <>
@@ -6,8 +8,12 @@ const Header = () => {
         <div className={style.headerLogo}></div>
 
         <nav>
-          <p>Поиск Вакансий</p>
-          <p>Избранное</p>
+          <Link to={"/"}>
+            <p>Поиск Вакансий</p>
+          </Link>
+          <Link to={"/favorite"}>
+            <p>Избранное</p>
+          </Link>
         </nav>
       </div>
     </>

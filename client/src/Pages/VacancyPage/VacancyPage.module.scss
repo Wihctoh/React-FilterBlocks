@@ -5,8 +5,9 @@ $white-color: #fff;
 $dot-color: #7b7c88;
 
 .cardWrapper {
-  margin-top: 16px;
   padding: 24px 0 24px 24px;
+  max-width: 773px;
+  margin: 16px auto;
 
   display: flex;
   flex-direction: column;
@@ -70,7 +71,8 @@ $dot-color: #7b7c88;
 // ---------------------cardRequirementsWrapper-------------
 
 .cardRequirementsWrapper {
-  margin-top: 20px;
+  max-width: 773px;
+  margin: 20px auto;
   padding: 24px;
   display: flex;
   flex-direction: column;

@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import style from "./VacancyPage.module.scss";
 import storage from "../../storage/storage.json";
+import Header from "../../components/Header/Header";
 
 const VacancyPage = () => {
   const { id } = useParams();
@@ -15,10 +16,13 @@ const VacancyPage = () => {
 
   useEffect(() => {
     filtered();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <>
+      <Header />
+
       <div className={style.cardWrapper}>
         <h2>{cardInfo.header}</h2>
 
